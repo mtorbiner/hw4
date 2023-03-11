@@ -1,8 +1,13 @@
-<h1 class="text-primary" style="--bs-text-opacity: .5;"><%= @place["name"] %></h1>
+<h1 class="text-light fw-bold" style="--bs-text-opacity: .5;"><%= @place["name"] %></h1>
 
 <h2>My Posts</h2>
 <% for post in @posts %>
   <h3><%= post["title"] %></h3>
+  <% if post.uploaded_image.attached? %>
+    <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+  <% else %>
+    <img src="<%= post["image"] %>" class="img-fluid">
+  <% end %>
   <h4><%= post["posted_on"] %></h4>
   <p><%= post["description"] %></p>
 <% end %>
