@@ -1,11 +1,11 @@
-<h1>New Place</h1>
+<h1 class="text-light fw-bold mt-5" style="--bs-text-opacity: .5;">New Place</h1>
 
 <%= form_with :model => @place do |form| %>
   <p>
     <%= form.label "name" %>
     <%= form.text_field "name" %>
   </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <button type="submit" class="btn btn-light">
+    Add
+  </button>
 <% end %>

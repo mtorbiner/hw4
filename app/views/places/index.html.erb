@@ -1,24 +1,24 @@
 <%if @current_user%>
 
-  <h1>Places</h1>
+  <h1 class="text-light fw-bold mt-5" style="--bs-text-opacity: .5;">Places</h1>
 
-  <h2> Hey, <%= @current_user["username"]%>, check out all the places we have in our app! </h2>
+  <h4 class="text-light" style="--bs-text-opacity: .5;"> Hey, <%= @current_user["username"]%>, check out all the places we have in our app! </h4>
 
   <ul>
     <% for place in @places %>
-      <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+      <li><a href="/places/<%= place["id"] %>" class="btn btn-secondary"><%= place["name"] %></a></li>
     <% end %>
   </ul>
   
-  <p>
+  <p class="text-light" style="--bs-text-opacity: .5;">
     Had an adventure somewhere else? Tell us where!!!
     
   </p>
 
-  <p> <a href="/places/new">Add a place</a> </p>
+  <p> <a href="/places/new" class="btn btn-light"> Add a place</a> </p>
 
 <%else%>
 
-<h1> Bill Burr is the Best  </h1>
+<h1> Please Log in first  </h1>
 
 <% end %>
