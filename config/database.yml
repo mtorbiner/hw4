@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: maxtravels_production
+  username: maxtravels
+  password: <%= ENV["MAXTRAVELS_DATABASE_PASSWORD"] %>
